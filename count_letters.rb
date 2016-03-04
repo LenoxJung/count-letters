@@ -1,10 +1,10 @@
 def count_letters(sentence)
   letters = {}
-  sentence.split('').each do |letter|
+  sentence.split('').each_with_index do |letter, index|
     if letters[letter] == nil
-      letters[letter] = 0
+      letters[letter] = []
     end
-    letters[letter] += 1
+    letters[letter] << index
   end
   letters
 end
